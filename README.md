@@ -1,6 +1,6 @@
 # Show In Folder
 
-[Atom](http://atom.io) package.
+An [Atom](http://atom.io) package.
 
 Provides a command to open the folder containing the file in the active editor, much like the _Show in Explorer_ option in the tree-view context menu.
 

@@ -12,51 +12,15 @@ describe "ShowInFolder", ->
     workspaceElement = atom.views.getView(atom.workspace)
     activationPromise = atom.packages.activatePackage('show-in-folder')
 
-  describe "when the show-in-folder:toggle event is triggered", ->
-    it "hides and shows the modal panel", ->
-      # Before the activation event the view is not on the DOM, and no panel
-      # has been created
-      expect(workspaceElement.querySelector('.show-in-folder')).not.toExist()
+  describe "when the show-in-folder:active-editor event is triggered", ->
+    it "opens the default OS file explorer at the path to the file in the editor", ->
+      # TODO prep: save a new file at a known path
 
-      # This is an activation event, triggering it will cause the package to be
-      # activated.
-      atom.commands.dispatch workspaceElement, 'show-in-folder:toggle'
+      # dispatch
+      atom.commands.dispatch workspaceElement, 'show-in-folder:active-editor'
 
       waitsForPromise ->
         activationPromise
 
-      runs ->
-        expect(workspaceElement.querySelector('.show-in-folder')).toExist()
-
-        showInFolderElement = workspaceElement.querySelector('.show-in-folder')
-        expect(showInFolderElement).toExist()
-
-        showInFolderPanel = atom.workspace.panelForItem(showInFolderElement)
-        expect(showInFolderPanel.isVisible()).toBe true
-        atom.commands.dispatch workspaceElement, 'show-in-folder:toggle'
-        expect(showInFolderPanel.isVisible()).toBe false
-
-    it "hides and shows the view", ->
-      # This test shows you an integration test testing at the view level.
-
-      # Attaching the workspaceElement to the DOM is required to allow the
-      # `toBeVisible()` matchers to work. Anything testing visibility or focus
-      # requires that the workspaceElement is on the DOM. Tests that attach the
-      # workspaceElement to the DOM are generally slower than those off DOM.
-      jasmine.attachToDOM(workspaceElement)
-
-      expect(workspaceElement.querySelector('.show-in-folder')).not.toExist()
-
-      # This is an activation event, triggering it causes the package to be
-      # activated.
-      atom.commands.dispatch workspaceElement, 'show-in-folder:toggle'
-
-      waitsForPromise ->
-        activationPromise
-
-      runs ->
-        # Now we can test for view visibility
-        showInFolderElement = workspaceElement.querySelector('.show-in-folder')
-        expect(showInFolderElement).toBeVisible()
-        atom.commands.dispatch workspaceElement, 'show-in-folder:toggle'
-        expect(showInFolderElement).not.toBeVisible()
+      # TODO: figure out how to test if an external window was opened
+      # runs ->
