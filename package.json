@@ -1,7 +1,7 @@
 {
   "name": "show-in-folder",
   "main": "./lib/show-in-folder",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Provides a command to open the folder containing the file in the active editor, much like the _Show in Explorer_ option in the tree-view context menu.",
   "keywords": [
     "show-in-folder",
