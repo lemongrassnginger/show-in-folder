@@ -4,7 +4,10 @@
   "version": "0.6.0",
   "description": "Provides a command to open the folder containing the file in the active editor, much like the _Show in Explorer_ option in the tree-view context menu.",
   "keywords": [
-    "show-in-folder",
+    "show",
+    "open",
+    "folder",
+    "explorer",
     "show-in-explorer"
   ],
   "activationCommands": {
