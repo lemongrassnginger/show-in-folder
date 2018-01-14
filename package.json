@@ -13,7 +13,7 @@
   "activationCommands": {
     "atom-workspace": "show-in-folder:active-editor"
   },
-  "repository": "https://github.com/lemongrassnginger/show-in-folder",
+  "repository": "https://github.com/stu-b-doo/show-in-folder",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
